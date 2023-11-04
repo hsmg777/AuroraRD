@@ -16,3 +16,15 @@ html {
 body {
   margin-bottom: 60px;
 }
+.contenedor {
+    text-align:center;
+}
+#miLista li {
+    display: inline-block;
+    margin-right: 10px;
+}
+#miLista {
+    list-style-type: none;
+    color: black;
+
+}

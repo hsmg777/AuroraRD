@@ -25,7 +25,7 @@ public class DBContextSample : IdentityDbContext<SampleUser>
 
     public DbSet<AuroraRD.Models.Reservas>? Reservas { get; set; }
 
-    public DbSet<AuroraRD.Models.Menu>? Menu { get; set; }
+    
 }
 
 public class ApplicationUserEntityConfiguration : IEntityTypeConfiguration<SampleUser> {
