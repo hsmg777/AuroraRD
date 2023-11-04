@@ -116,7 +116,8 @@ namespace AuroraRD.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
-                    return LocalRedirect(returnUrl);
+                    
+                     return LocalRedirect("/MENU"); //CAMBIAR A INTERFAZ HOME 
                 }
                 if (result.RequiresTwoFactor)
                 {

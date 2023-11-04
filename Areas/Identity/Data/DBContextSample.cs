@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using AuroraRD.Models;
 
 namespace AuroraRD.Areas.Identity.Data;
 
@@ -21,6 +22,10 @@ public class DBContextSample : IdentityDbContext<SampleUser>
         // Add your customizations after calling base.OnModelCreating(builder);
         builder.ApplyConfiguration(new ApplicationUserEntityConfiguration());
     }
+
+    public DbSet<AuroraRD.Models.Reservas>? Reservas { get; set; }
+
+    public DbSet<AuroraRD.Models.Menu>? Menu { get; set; }
 }
 
 public class ApplicationUserEntityConfiguration : IEntityTypeConfiguration<SampleUser> {
