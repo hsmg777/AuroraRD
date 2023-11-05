@@ -97,6 +97,23 @@ namespace AuroraRD.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("AuroraRD.Models.Reseñas", b =>
+                {
+                    b.Property<int>("IdReserva")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdReserva"), 1L, 1);
+
+                    b.Property<string>("Comentario")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("IdReserva");
+
+                    b.ToTable("Reseñas");
+                });
+
             modelBuilder.Entity("AuroraRD.Models.Reservas", b =>
                 {
                     b.Property<int>("IdReserva")

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AuroraRD.Migrations
 {
     [DbContext(typeof(DBContextSample))]
-    [Migration("20231104164225_CambiosBD")]
-    partial class CambiosBD
+    [Migration("20231105025649_migration1")]
+    partial class migration1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -97,6 +97,23 @@ namespace AuroraRD.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+                });
+
+            modelBuilder.Entity("AuroraRD.Models.Reseñas", b =>
+                {
+                    b.Property<int>("IdReserva")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdReserva"), 1L, 1);
+
+                    b.Property<string>("Comentario")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("IdReserva");
+
+                    b.ToTable("Reseñas");
                 });
 
             modelBuilder.Entity("AuroraRD.Models.Reservas", b =>

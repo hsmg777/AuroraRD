@@ -22,5 +22,6 @@ namespace AuroraRD.Models
         
         public int numAsistentes {  get; set; }
 
+      
     }
 }
