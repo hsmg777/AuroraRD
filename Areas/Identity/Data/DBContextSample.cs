@@ -26,6 +26,9 @@ public class DBContextSample : IdentityDbContext<SampleUser>
     public DbSet<AuroraRD.Models.Reservas>? Reservas { get; set; }
 
     public DbSet<AuroraRD.Models.Reseñas>? Reseñas { get; set; }
+    public DbSet<AuroraRD.Models.Liquido>? Liquido { get; set; }
+
+   
 
    
 

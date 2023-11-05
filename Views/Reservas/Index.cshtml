@@ -29,7 +29,8 @@
     </thead>
     <tbody>
 @foreach (var item in Model) {
-        <tr>
+            <tr>
+                
             <td>
                 @Html.DisplayFor(modelItem => item.NombreReserva)
             </td>
@@ -37,7 +38,16 @@
                 @Html.DisplayFor(modelItem => item.fecha)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Botella)
+                
+                        @if (item.Botella)
+                        {
+                        <p><a asp-area="" asp-controller="Liquido" asp-action="Index">Seleccionar botella</a></p>
+                        }
+                        else
+                        {
+                        <p>No se ha solicitado bebidas</p>
+                        }
+             
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.numAsistentes)

@@ -4,6 +4,7 @@ using AuroraRD.Areas.Identity.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AuroraRD.Migrations
 {
     [DbContext(typeof(DBContextSample))]
-    partial class DBContextSampleModelSnapshot : ModelSnapshot
+    [Migration("20231105042527_migra")]
+    partial class migra
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -97,13 +99,13 @@ namespace AuroraRD.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
-            modelBuilder.Entity("AuroraRD.Models.Liquido", b =>
+            modelBuilder.Entity("AuroraRD.Models.Drinks", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("IdDrink")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdDrink"), 1L, 1);
 
                     b.Property<int>("Precio")
                         .HasColumnType("int");
@@ -112,6 +114,27 @@ namespace AuroraRD.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("imagen")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("IdDrink");
+
+                    b.ToTable("Drinks");
+                });
+
+            modelBuilder.Entity("AuroraRD.Models.Liquido", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
