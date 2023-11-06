@@ -105,12 +105,6 @@ namespace AuroraRD.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("IdReservas")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ReservasIdReserva")
-                        .HasColumnType("int");
-
                     b.Property<int>("cantidad")
                         .HasColumnType("int");
 
@@ -119,8 +113,6 @@ namespace AuroraRD.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ReservasIdReserva");
 
                     b.ToTable("Liquido");
                 });
@@ -303,17 +295,6 @@ namespace AuroraRD.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
-                });
-
-            modelBuilder.Entity("AuroraRD.Models.Liquido", b =>
-                {
-                    b.HasOne("AuroraRD.Models.Reservas", "Reservas")
-                        .WithMany()
-                        .HasForeignKey("ReservasIdReserva")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Reservas");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

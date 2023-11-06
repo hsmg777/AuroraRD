@@ -22,7 +22,7 @@ namespace AuroraRD.Models
         
         public int numAsistentes {  get; set; }
 
-       
+      // public List<Liquido> liquidos {  get; set; }
 
       
     }

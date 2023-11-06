@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AuroraRD.Migrations
 {
     [DbContext(typeof(DBContextSample))]
-    [Migration("20231105043404_migra1")]
-    partial class migra1
+    [Migration("20231106044044_HastaAcaDaConocimiento")]
+    partial class HastaAcaDaConocimiento
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -106,9 +106,6 @@ namespace AuroraRD.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("Precio")
-                        .HasColumnType("int");
 
                     b.Property<int>("cantidad")
                         .HasColumnType("int");

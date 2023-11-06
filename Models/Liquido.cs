@@ -14,7 +14,7 @@ namespace AuroraRD.Models
         
         public int cantidad {  get; set; }
 
-      
-        
+      //public int ReservasId {get; set;}
+      //public Reservas Reservas {get; set;]
     }
 }
