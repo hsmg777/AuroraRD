@@ -1,5 +1,6 @@
 html {
   font-size: 14px;
+  color:white;
 }
 
 @media (min-width: 768px) {
@@ -14,7 +15,12 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    color:white;
+    margin-bottom: 60px;
+    background-image: url('https://www.todofondos.net/wp-content/uploads/3840x2160-ESPACIO-4K-FONDO-DE-PANTALLA-scaled.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 .contenedor {
     text-align:center;
@@ -27,4 +33,7 @@ body {
     list-style-type: none;
     color: black;
 
+}
+#white {
+    color:white;
 }

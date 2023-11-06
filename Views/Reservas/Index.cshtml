@@ -1,15 +1,15 @@
 ﻿@model IEnumerable<AuroraRD.Models.Reservas>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Reservas";
 }
 
-<h1>Index</h1>
+<h1>RESERVAS</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
+<table class="table" id="white">
     <thead>
         <tr>
             <th>
@@ -29,8 +29,7 @@
     </thead>
     <tbody>
 @foreach (var item in Model) {
-            <tr>
-                
+        <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.NombreReserva)
             </td>
@@ -38,15 +37,16 @@
                 @Html.DisplayFor(modelItem => item.fecha)
             </td>
             <td>
-                
+
                         @if (item.Botella)
                         {
-                        <p><a asp-area="" asp-controller="Liquido" asp-action="Index">Seleccionar botella</a></p>
+                            <p><a asp-area="" asp-controller="Liquidoes" asp-action="Index">Seleccionar botella</a></p>
                         }
                         else
                         {
+                            <p>Sin botellas para la reserva</p>
                         }
-             
+
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.numAsistentes)
@@ -61,3 +61,4 @@
     </tbody>
 </table>
 <p><a asp-area="" asp-controller="Home" asp-action="Menu">Volver a menu</a></p>
+

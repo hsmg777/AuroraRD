@@ -10,16 +10,16 @@ using AuroraRD.Models;
 
 namespace AuroraRD.Controllers
 {
-    public class LiquidoController : Controller
+    public class LiquidoesController : Controller
     {
         private readonly DBContextSample _context;
 
-        public LiquidoController(DBContextSample context)
+        public LiquidoesController(DBContextSample context)
         {
             _context = context;
         }
 
-        // GET: Liquido
+        // GET: Liquidoes
         public async Task<IActionResult> Index()
         {
               return _context.Liquido != null ? 
@@ -27,7 +27,7 @@ namespace AuroraRD.Controllers
                           Problem("Entity set 'DBContextSample.Liquido'  is null.");
         }
 
-        // GET: Liquido/Details/5
+        // GET: Liquidoes/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Liquido == null)
@@ -45,18 +45,18 @@ namespace AuroraRD.Controllers
             return View(liquido);
         }
 
-        // GET: Liquido/Create
+        // GET: Liquidoes/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Liquido/Create
+        // POST: Liquidoes/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,imagen,Precio,cantidad")] Liquido liquido)
+        public async Task<IActionResult> Create([Bind("Id,imagen,cantidad")] Liquido liquido)
         {
             if (ModelState.IsValid)
             {
@@ -67,7 +67,7 @@ namespace AuroraRD.Controllers
             return View(liquido);
         }
 
-        // GET: Liquido/Edit/5
+        // GET: Liquidoes/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Liquido == null)
@@ -83,12 +83,12 @@ namespace AuroraRD.Controllers
             return View(liquido);
         }
 
-        // POST: Liquido/Edit/5
+        // POST: Liquidoes/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,imagen,Precio,cantidad")] Liquido liquido)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,imagen,cantidad")] Liquido liquido)
         {
             if (id != liquido.Id)
             {
@@ -118,7 +118,7 @@ namespace AuroraRD.Controllers
             return View(liquido);
         }
 
-        // GET: Liquido/Delete/5
+        // GET: Liquidoes/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Liquido == null)
@@ -136,7 +136,7 @@ namespace AuroraRD.Controllers
             return View(liquido);
         }
 
-        // POST: Liquido/Delete/5
+        // POST: Liquidoes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
