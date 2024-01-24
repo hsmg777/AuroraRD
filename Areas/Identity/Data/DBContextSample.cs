@@ -23,10 +23,7 @@ public class DBContextSample : IdentityDbContext<SampleUser>
         builder.ApplyConfiguration(new ApplicationUserEntityConfiguration());
     }
 
-    public DbSet<AuroraRD.Models.Reservas>? Reservas { get; set; }
 
-    public DbSet<AuroraRD.Models.Reseñas>? Reseñas { get; set; }
-    public DbSet<AuroraRD.Models.Liquido>? Liquido { get; set; }
 
    
 

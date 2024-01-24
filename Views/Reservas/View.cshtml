@@ -1,0 +1,48 @@
+﻿@model List<Class1>
+
+@{
+    ViewData["Title"] = "View Reservas";
+}
+
+<style>
+    table {
+        background-color: white;
+    }
+
+        table th, table td {
+            padding: 10px;
+            border: 1px solid #ddd; /* Añadir bordes para mayor claridad */
+        }
+</style>
+
+<h1>View Reservas</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Número de Personas</th>
+            <th>Teléfono</th>
+            <th>Fecha</th>
+            <th>Hora de Llegada</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var reserva in Model)
+        {
+            <tr>
+                <td>@reserva.idReserva</td>
+                <td>@reserva.nombre</td>
+                <td>@reserva.numeroPersonas</td>
+                <td>@reserva.telefono</td>
+                <td>@reserva.fecha</td>
+                <td>@reserva.horaLlega</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+
